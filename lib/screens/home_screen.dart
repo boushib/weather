@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   final String city;
   final int temperature;
   final String description;
   final String icon;
 
-  HomePage(
+  HomeScreen(
       {@required this.city,
       @required this.temperature,
       @required this.description,
-        @required this.icon
-      });
+      @required this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +37,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Image(
-              image:
-                  NetworkImage(icon),
+              image: NetworkImage(icon),
             ),
             Text("$description"),
             FlatButton(
