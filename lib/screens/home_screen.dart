@@ -1,19 +1,11 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  final String city;
-  final int temperature;
-  final String description;
-  final String icon;
-
-  HomeScreen(
-      {@required this.city,
-      @required this.temperature,
-      @required this.description,
-      @required this.icon});
-
+  static const route = 'home';
   @override
   Widget build(BuildContext context) {
+    final Map<String, dynamic> _weatherData =
+        ModalRoute.of(context).settings.arguments;
     return Scaffold(
       appBar: AppBar(
         title: Text("Home Page"),
@@ -24,11 +16,11 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              "$city",
+              _weatherData['city'],
               style: TextStyle(fontSize: 18.0, color: Color(0xFF777777)),
             ),
             Text(
-              "$temperature°",
+              "${_weatherData['temperature']}°",
               style: TextStyle(
                 fontSize: 64.0,
                 fontFamily: "Roboto",
@@ -37,9 +29,9 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             Image(
-              image: NetworkImage(icon),
+              image: NetworkImage(_weatherData['icon']),
             ),
-            Text("$description"),
+            Text(_weatherData['description']),
             FlatButton(
               child: Text(
                 'Settings',

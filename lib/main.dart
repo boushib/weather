@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather/screens/home_screen.dart';
 import 'screens/settings_screen.dart';
 import 'screens/welcome_screen.dart';
 
@@ -10,11 +11,11 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: "/",
+      home: WelcomeScreen(),
       routes: {
-        "/": (context) => WelcomeScreen(),
-        "/home": (context) => WelcomeScreen(),
-        "/settings": (context) => SettingsScreen(),
+        WelcomeScreen.route: (_) => WelcomeScreen(),
+        HomeScreen.route: (_) => HomeScreen(),
+        SettingsScreen.route: (_) => SettingsScreen(),
       },
     );
   }

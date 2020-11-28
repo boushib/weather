@@ -8,6 +8,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 const api_key = '2a5ee69923e0258a4dbeebd8546ff675';
 
 class WelcomeScreen extends StatefulWidget {
+  static const route = 'welcome';
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
@@ -38,17 +39,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       String icon = "http://openweathermap.org/img/wn/" +
           codeToIcon(condition) +
           "d@2x.png";
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => HomeScreen(
-            city: city,
-            temperature: temperature,
-            description: description,
-            icon: icon,
-          ),
-        ),
-      );
+      Navigator.pushNamed(context, HomeScreen.route, arguments: {
+        'city': city,
+        'temperature': temperature,
+        'description': description,
+        'icon': icon,
+      });
     } catch (err) {
       print("ERROR: $err");
       return null;
