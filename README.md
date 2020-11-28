@@ -1,10 +1,8 @@
 # weather
 
-A new Flutter project.
+A lightweight weather app created using Flutter and OpenWeatherMap API.
 
 ## Getting Started
-
-This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 
