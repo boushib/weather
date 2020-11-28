@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import './views/settings.dart';
-import './views/home.dart';
-import './views/welcome.dart';
+import 'screens/settings_screen.dart';
+import 'screens/welcome_screen.dart';
 
 void main() {
   runApp(App());
@@ -13,9 +12,9 @@ class App extends StatelessWidget {
     return MaterialApp(
       initialRoute: "/",
       routes: {
-        "/": (context) => WelcomePage(),
-        "/home": (context) => HomePage(),
-        "/settings": (context) => SettingsPage(),
+        "/": (context) => WelcomeScreen(),
+        "/home": (context) => WelcomeScreen(),
+        "/settings": (context) => SettingsScreen(),
       },
     );
   }

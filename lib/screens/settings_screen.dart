@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class SettingsPage extends StatefulWidget {
+class SettingsScreen extends StatefulWidget {
   @override
-  _SettingsPageState createState() => _SettingsPageState();
+  _SettingsScreenState createState() => _SettingsScreenState();
 }
 
-class _SettingsPageState extends State<SettingsPage> {
+class _SettingsScreenState extends State<SettingsScreen> {
   @override
   void deactivate() {
     // TODO: implement deactivate
@@ -39,7 +39,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   filled: true,
                   fillColor: Color.fromRGBO(255, 255, 255, .4),
                 ),
-                onChanged: (value){
+                onChanged: (value) {
                   print(value);
                 },
               ),
